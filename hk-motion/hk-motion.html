@@ -1,0 +1,118 @@
+<script type="text/javascript">function getRndInteger(min, max)
+    {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    function genMAC()
+    {
+        var hexDigits = "0123456789ABCDEF";
+        var macAddress = "";
+        for (var i = 0; i < 6; i++)
+        {
+            macAddress += hexDigits.charAt(Math.round(Math.random() * 15));
+            macAddress += hexDigits.charAt(Math.round(Math.random() * 15));
+            if (i != 5) macAddress += ":";
+        }
+
+        return macAddress;
+    }
+
+    function CreateValues() {
+        document.getElementById('node-input-pincode').value = getRndInteger(100, 999) + "-" + getRndInteger(10, 99) + "-" + getRndInteger(100, 999);
+        document.getElementById('node-input-username').value = genMAC();
+        document.getElementById('node-input-port').value = getRndInteger(40000, 59999);
+
+    }
+
+    RED.nodes.registerType('hk-motion',
+        {
+            category: 'Apple Homekit',
+            color: 'rgb(247,148,36)',
+            defaults:
+            {
+                pincode: { value: "" },
+                username: { value: "" },
+                name: { value: "Motion Sensor" },
+                port: { value: "" },
+                interceptget: { value: "No" }
+            },
+            inputs: 1,
+            outputs: 1,
+            icon: "MOTION.png",
+            label: function () {
+                return this.name;
+            }
+        });
+    
+    </script>
+
+<script type="text/x-red" data-template-name="hk-motion">
+    <p>
+        Configure the accessory details below.<br /><br />
+        <strong>Name :</strong> The name as it appears in Homeapp/Homekit based applications.<br />
+        <strong>Pincode :</strong> The required code to enter when enrolling the accessory in Homekit.<br />
+        <strong>Username :</strong> An identifyer for your device, it must follow the mac address format (00:00:00:00:00:00).<br />
+        <strong>Port :</strong> The network port your accessory will listen on.<br />
+        <strong>Intercept Get Commands :</strong> Whether or not to step in and retrive the 'real' status of thre device when homekit queries it.<br /><br />
+        <strong>Port</strong>, <strong>Pincode</strong> &amp; <strong>Username</strong> should be unique across your devices, use the <strong>Populate Values</strong> button to gernate some random values to start you of.
+</p>
+    <input type="button" value="Populate Values" onclick="CreateValues()" />
+    <br />
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input  type="text" id="node-input-name" placeholder="My Accessory">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pin"><i class="icon-tag"></i> Pincode</label>
+        <input   type="text" id="node-input-pincode" placeholder="000-00-000">
+    </div>
+    <div class="form-row">
+        <label for="node-input-username"><i class="icon-tag"></i> Username</label>
+        <input type="text" id="node-input-username" placeholder="00:00:00:00:00:00">
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="icon-tag"></i> Port</label>
+        <input type="text" id="node-input-port" placeholder="00000">
+    </div>
+    <div class="form-row">
+        <label for="node-input-interceptget"><i class="icon-tag"></i> Intercept Get Commands</label>
+        <select id="node-input-interceptget"><option value="No">No</option><option value="Yes">Yes</option></select>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="hk-motion">
+    <p>A Homekit motion sensor</p>
+
+    <p>
+        <strong>Input:</strong><br />
+        A <strong>payload</strong> object containing the Characteristics to apply.
+
+    </p>
+
+    <p>
+        <strong>Output:</strong><br />
+        A <strong>payload</strong> object containing an event that has occurred. depending on the event, a <strong>characteristic</strong> and a <strong>value</strong> object will be included.<br />
+        <table border="1">
+            <tr>
+                <td><strong>event</strong></td>
+                <td><strong>characteristic</strong></td>
+            </tr>
+            <tr>
+                <td>AccessoryInitialised</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>AccessoryIdentify</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>GetCharacteristic (if interception enabled)</td>
+                <td>MotionDetected<br />StatusActive<br />BatteryLevel<br />StatusLowBattery<br />ChargingState</td>
+            </tr>
+        </table>
+
+    </p>
+    
+
+</script>

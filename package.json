@@ -1,0 +1,24 @@
+{
+  "name": "node-red-contrib-homekit-preconfigured",
+  "version": "0.0.1",
+  "description": "A collection of node-red nodes, representing various preconfigured Homekit devices, supporting their full functionality.",
+  "dependencies": {
+    
+    "hap-nodejs": "0.5.0",
+    "child_process": "1.0.2",
+    "ip": "1.1.5"
+
+  },
+  "keywords": [ "node-red", "homekit","apple" ],
+  "node-red": {
+    "nodes": {
+      "hk-switch": "hk-switch/hk-switch.js",
+      "hk-television": "hk-television/hk-television.js",
+      "hk-alarm": "hk-alarm/hk-alarm.js",
+      "hk-outlet": "hk-outlet/hk-outlet.js",
+      "hk-motion": "hk-motion/hk-motion.js",
+      "hk-contact": "hk-contact/hk-contact.js",
+       "hk-camera": "hk-camera/hk-camera.js"
+    }
+  }
+}
