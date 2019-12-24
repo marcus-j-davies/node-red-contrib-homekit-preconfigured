@@ -67,7 +67,7 @@ module.exports = function (RED)
         Properties["TargetTemperature"] = 21;
         Properties["TemperatureDisplayUnits"] = 0;
 
-        if (config.supportsCooling)
+        if (config.supportsCooling == "Yes")
         {
             service.setCharacteristic(Characteristic.CoolingThresholdTemperature, 26);
             service.setCharacteristic(Characteristic.HeatingThresholdTemperature, 18);
@@ -160,7 +160,7 @@ module.exports = function (RED)
             .on(CharacteristicEventTypes.GET, function (callback) { Get("TargetTemperature", callback) });
 
         // Cooling modes
-        if (config.supportsCooling)
+        if (config.supportsCooling == "Yes")
         {
             service.getCharacteristic(Characteristic.CoolingThresholdTemperature)
             .on(CharacteristicEventTypes.SET, function (value, callback, hap) { Set("CoolingThresholdTemperature", value, callback, hap) })
