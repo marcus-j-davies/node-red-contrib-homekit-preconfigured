@@ -9,6 +9,7 @@ Current configured nodes:
   - Motion Sensor
   - Contact Sensor (Window/Door)
   - IP Cameras (Requires FFMPEG with libx264)
+  - Thermostat
 
 All nodes have their various events configured. i.e. The Television node emits power state, input source, key command and volume changes.
 the Accessory based events are also sent i.e. the Accessory being initialised & identified.
