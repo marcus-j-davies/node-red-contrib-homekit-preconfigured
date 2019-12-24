@@ -18,7 +18,8 @@
       "hk-outlet": "hk-outlet/hk-outlet.js",
       "hk-motion": "hk-motion/hk-motion.js",
       "hk-contact": "hk-contact/hk-contact.js",
-       "hk-camera": "hk-camera/hk-camera.js"
+      "hk-camera": "hk-camera/hk-camera.js",
+      "hk-thermostat": "hk-thermostat/hk-thermostat.js"
     }
   }
 }
