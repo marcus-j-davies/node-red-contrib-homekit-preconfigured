@@ -33,7 +33,7 @@ function Camera(config)
     this.maxBitrate = 300
     this.packetsize = 1316
     this.additionalCommandline = "-tune zerolatency"
-    this.vcodec = "libx264"
+    this.vcodec = config.encoder;
     this.mapvideo = "0:0"
     
 
