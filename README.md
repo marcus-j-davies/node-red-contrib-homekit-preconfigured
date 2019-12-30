@@ -8,7 +8,7 @@ Current configured nodes:
   - Intruder Alarm
   - Motion Sensor
   - Contact Sensor (Window/Door)
-  - IP Cameras (Requires FFMPEG with libx264)
+  - IP Cameras (Requires FFMPEG with libx264 or h264_omx for hardware acceleration on a pi)
   - Thermostat
 
 All nodes have their various events configured. i.e. The Television node emits power state, input source, key command and volume changes.
