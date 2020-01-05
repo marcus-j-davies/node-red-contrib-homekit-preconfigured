@@ -42,7 +42,9 @@ Homekit depends on Bonjour, so you will need to install a library to help with t
 
     sudo apt-get install libavahi-compat-libdnssd-dev
     
-Then Within the .node-red directory, clone this repository
+Use the Node Red Palette menu or alternatively...
+
+Within the .node-red directory, clone this repository
 
     git clone https://github.com/marcus-j-davies/node-red-contrib-homekit-preconfigured.git
 
