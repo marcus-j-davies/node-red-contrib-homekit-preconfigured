@@ -1,16 +1,21 @@
 {
   "name": "node-red-contrib-homekit-preconfigured",
   "version": "0.2.7",
-  "license" : "MIT",
+  "license": "MIT",
   "description": "A collection of node-red nodes, representing various preconfigured Homekit devices, supporting their full functionality.",
   "dependencies": {
-    
     "hap-nodejs": "0.5.0",
     "child_process": "1.0.2",
     "ip": "1.1.5"
-
   },
-  "keywords": [ "node-red", "homekit","apple","smart","automation","hap-nodejs" ],
+  "keywords": [
+    "node-red",
+    "homekit",
+    "apple",
+    "smart",
+    "automation",
+    "hap-nodejs"
+  ],
   "node-red": {
     "nodes": {
       "hk-switch": "hk-switch/hk-switch.js",
@@ -22,5 +27,14 @@
       "hk-camera": "hk-camera/hk-camera.js",
       "hk-thermostat": "hk-thermostat/hk-thermostat.js"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcus-j-davies/node-red-contrib-zwave-dotnet.git"
+  },
+  "author": "Marcus Davies",
+  "bugs": {
+    "url": "https://github.com/marcus-j-davies/node-red-contrib-zwave-dotnet/issues"
+  },
+  "homepage": "https://github.com/marcus-j-davies/node-red-contrib-zwave-dotnet#readme"
 }
