@@ -30,11 +30,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcus-j-davies/node-red-contrib-zwave-dotnet.git"
+    "url": "git+https://github.com/marcus-j-davies/node-red-contrib-homekit-preconfigured.git"
   },
   "author": "Marcus Davies",
   "bugs": {
-    "url": "https://github.com/marcus-j-davies/node-red-contrib-zwave-dotnet/issues"
+    "url": "https://github.com/marcus-j-davies/node-red-contrib-homekit-preconfigured/issues"
   },
-  "homepage": "https://github.com/marcus-j-davies/node-red-contrib-zwave-dotnet#readme"
+  "homepage": "https://github.com/marcus-j-davies/node-red-contrib-homekit-preconfigured#readme"
 }
