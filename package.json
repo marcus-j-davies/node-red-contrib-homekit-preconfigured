@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-homekit-preconfigured",
-  "version": "0.2.2",
+  "version": "0.2.7",
   "license" : "MIT",
   "description": "A collection of node-red nodes, representing various preconfigured Homekit devices, supporting their full functionality.",
   "dependencies": {
