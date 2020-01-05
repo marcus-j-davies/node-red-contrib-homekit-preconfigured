@@ -9,7 +9,7 @@
     "ip": "1.1.5"
 
   },
-  "keywords": [ "node-red", "homekit","apple" ],
+  "keywords": [ "node-red", "homekit","apple","smart","automation","hapnode-js" ],
   "node-red": {
     "nodes": {
       "hk-switch": "hk-switch/hk-switch.js",
