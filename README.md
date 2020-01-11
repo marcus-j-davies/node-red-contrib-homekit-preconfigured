@@ -92,3 +92,7 @@ Note: In order to intercept these commands, you will need to set the config valu
 
 ## Credits
 A Special thanks to KhaosT (https://github.com/KhaosT) and the awsome contributors for the amazing hap-nodejs project, that makes projects like this one possible.
+
+## Version History
+  - 1.0.0
+    Initial Release
