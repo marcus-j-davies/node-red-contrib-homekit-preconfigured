@@ -18,12 +18,18 @@
         return macAddress;
     }
 
-    function CreateValues()
-    {
-        document.getElementById('node-input-pincode').value = getRndInteger(100, 999) + "-" + getRndInteger(10, 99) + "-" + getRndInteger(100, 999);
-        document.getElementById('node-input-username').value = genMAC();
-        document.getElementById('node-input-port').value = getRndInteger(40000, 59999);
+    function SetValues() {
+        if (this.port.length < 1) {
+            document.getElementById('node-input-port').value = getRndInteger(40000, 59999);
+        }
 
+        if (this.username.length < 1) {
+            document.getElementById('node-input-username').value = genMAC();
+        }
+
+        if (this.pincode.length < 1) {
+            document.getElementById('node-input-pincode').value = getRndInteger(100, 999) + "-" + getRndInteger(10, 99) + "-" + getRndInteger(100, 999);
+        }
     }
 
 
@@ -44,7 +50,8 @@
             icon: "ALARM.png",
             label: function () {
                 return this.name
-            }
+            },
+            oneditprepare: SetValues
         });
 </script>
 
@@ -56,10 +63,8 @@
         <strong>Username :</strong> An identifyer for your device, it must follow the mac address format (00:00:00:00:00:00).<br />
         <strong>Port :</strong> The network port your accessory will listen on.<br />
         <strong>Intercept Get Commands :</strong> Whether or not to step in and retrive the 'real' status of thre device when homekit queries it.<br /><br />
-        <strong>Port</strong>, <strong>Pincode</strong> &amp; <strong>Username</strong> should be unique across your devices, use the <strong>Populate Values</strong> button to gernate some random values to start you of.
-
+        <strong>Port</strong>, <strong>Pincode</strong> &amp; <strong>Username</strong> should be unique across your devices. (Example values have been created)
     </p>
-    <input type="button" value="Populate Values" onclick="CreateValues()" />
     <br />
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>

@@ -1,4 +1,6 @@
-<script type="text/javascript">function getRndInteger(min, max)
+<script type="text/javascript">
+
+    function getRndInteger(min, max)
     {
         return Math.floor(Math.random() * (max - min)) + min;
     }
@@ -17,7 +19,8 @@
         return macAddress;
     }
 
-    function SetValues() {
+    function SetValues()
+    {
         if (this.port.length < 1) {
             document.getElementById('node-input-port').value = getRndInteger(40000, 59999);
         }
@@ -31,7 +34,7 @@
         }
     }
 
-    RED.nodes.registerType('hk-motion',
+    RED.nodes.registerType('hk-lock',
         {
             category: 'Apple Homekit',
             color: 'rgb(247,148,36)',
@@ -39,22 +42,22 @@
             {
                 pincode: { value: "" },
                 username: { value: "" },
-                name: { value: "Motion Sensor" },
+                name: { value: "Door Lock" },
                 port: { value: "" },
                 interceptget: { value: "No" }
             },
             inputs: 1,
             outputs: 1,
-            icon: "MOTION.png",
+            icon: "LOCK.png",
             label: function () {
                 return this.name;
             },
-            oneditprepare: SetValues
-        });
-    
-    </script>
 
-<script type="text/x-red" data-template-name="hk-motion">
+            oneditprepare:SetValues
+        });
+</script>
+
+<script type="text/x-red" data-template-name="hk-lock">
     <p>
         Configure the accessory details below.<br /><br />
         <strong>Name :</strong> The name as it appears in Homeapp/Homekit based applications.<br />
@@ -87,8 +90,8 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="hk-motion">
-    <p>A Homekit motion sensor</p>
+<script type="text/x-red" data-help-name="hk-lock">
+    <p>A Homekit enabled door lock.</p>
 
     <p>
         <strong>Input:</strong><br />
@@ -115,11 +118,14 @@
 
             <tr>
                 <td>GetCharacteristic (if interception enabled)</td>
-                <td>MotionDetected<br />StatusActive<br />BatteryLevel<br />StatusLowBattery<br />ChargingState</td>
+                <td>LockTargetState<br />LockCurrentState</td>
+            </tr>
+            <tr>
+                <td>CharacteristicChange</td>
+                <td>LockTargetState</td>
             </tr>
         </table>
 
     </p>
     
-
 </script>

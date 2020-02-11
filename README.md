@@ -10,6 +10,7 @@ Current configured nodes:
   - Contact Sensor (Window/Door)
   - IP Cameras (Requires FFMPEG with libx264 or h264_omx for hardware acceleration on a pi)
   - Thermostat
+  - Smart Lock
 
 All nodes have their various events configured. i.e. The Television node emits power state, input source, key command and volume changes.
 the Accessory based events are also sent i.e. the Accessory being initialised & identified.
@@ -94,5 +95,9 @@ Note: In order to intercept these commands, you will need to set the config valu
 A Special thanks to KhaosT (https://github.com/KhaosT) and the awsome contributors for the amazing hap-nodejs project, that makes projects like this one possible.
 
 ## Version History
+  - 1.1.0  
+    Cleaned up config UI (Values for new accessories are generated on open)
+    Bump HAP-NodeJS to 0.5.6
+    Added Lock Accessory node.
   - 1.0.0  
     Initial Release
