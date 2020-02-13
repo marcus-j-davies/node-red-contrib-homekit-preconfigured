@@ -11,6 +11,7 @@ Current configured nodes:
   - IP Cameras (Requires FFMPEG with libx264 or h264_omx for hardware acceleration on a pi)
   - Thermostat
   - Smart Lock
+  - Garage Door Opener
 
 All nodes have their various events configured. i.e. The Television node emits power state, input source, key command and volume changes.
 the Accessory based events are also sent i.e. the Accessory being initialised & identified.
@@ -31,10 +32,10 @@ As well as outputs (above), the nodes takes an input. The input should contain a
 The aim is to build up a rich set of Accessories (IP Cameras also), and make them ready made nodes for node-red.
 
 ## Why?
-You might ask, why use this instead of node-red-contrib-homekit-bridged (https://github.com/NRCHKB/node-red-contrib-homekit-bridged) and my answer to that will be use node-red-contrib-homekit-bridged, espcially if you are knowledgeable in Apples Homekit Accessory Protocol. It offers the ability to create most Homekit Accessories, its an awsome module for node-red and works very very well. For me however, I wanted the following:
+You might ask, why use this instead of [node-red-contrib-homekit-bridged](https://github.com/NRCHKB/node-red-contrib-homekit-bridged) and my answer to that will be use node-red-contrib-homekit-bridged, espcially if you are knowledgeable in Apples Homekit Accessory Protocol. It offers the ability to create most Homekit Accessories, its an awsome module for node-red and works very very well. For me however, I wanted the following:
   - To have full visibility of the events emitted from the accessory
-  - To have all the required and optional Characteristics configured, for each accessory type (TV Accessory being one of them)
-  - To have each Accessory type 'work out of the box' i.e you want an Alarm Accessory, then drag the Alarm node in to your flow
+  - To have all the required and optional Characteristics configured for each accessory type (TV Accessory being one of them)
+  - To have each Accessory type work 'out of the box' i.e you want an Alarm Accessory, then drag the Alarm node in to your flow
   
 And so i created this repo.
 
@@ -95,6 +96,8 @@ Note: In order to intercept these commands, you will need to set the config valu
 A Special thanks to KhaosT (https://github.com/KhaosT) and the awsome contributors for the amazing hap-nodejs project, that makes projects like this one possible.
 
 ## Version History
+  - 1.2.0  
+    Added Garage Door Opener ([#2](https://github.com/marcus-j-davies/node-red-contrib-homekit-preconfigured/issues/2))
   - 1.1.0  
     Cleaned up config UI (Values for new accessories are generated on open)
     Bump HAP-NodeJS to 0.5.6
