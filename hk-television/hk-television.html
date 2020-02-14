@@ -45,7 +45,8 @@
                 name: { value: "Television" },
                 port: { value: "" },
                 interceptget: { value: "No" },
-                input_names:{value:"HDMI 1,HDMI 2,HDMI 3"}
+                input_names: { value: "HDMI 1,HDMI 2,HDMI 3" },
+                originalId: { value: "" }
 
             },
             inputs: 1,
@@ -54,7 +55,8 @@
             label: function () {
                 return this.name;
             },
-            oneditprepare: SetValues
+            oneditprepare: SetValues,
+            oneditsave: function () { this.originalId = this.id; }
         });
 </script>
 

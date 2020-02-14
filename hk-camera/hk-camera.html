@@ -47,7 +47,8 @@
                 maxWidth: { value: "1280" },
                 maxHeight: { value: "720" },
                 maxFPS: { value: "10" },
-                encoder: { value: "libx264"}
+                encoder: { value: "libx264" },
+                originalId: { value: "" }
             
             },
             inputs: 0,
@@ -56,7 +57,8 @@
             label: function () {
                 return this.name;
             },
-            oneditprepare: SetValues
+            oneditprepare: SetValues,
+            oneditsave: function () { this.originalId = this.id; }
         });
 </script>
 

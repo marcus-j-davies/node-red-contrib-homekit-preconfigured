@@ -44,7 +44,8 @@
                 name: { value: "Thermostat" },
                 port: { value: "" },
                 interceptget: { value: "No" },
-                supportsCooling: { value: "No" }
+                supportsCooling: { value: "No" },
+                originalId: { value: "" }
             },
             inputs: 1,
             outputs: 1,
@@ -52,7 +53,8 @@
             label: function () {
                 return this.name;
             },
-            oneditprepare: SetValues
+            oneditprepare: SetValues,
+            oneditsave: function () { this.originalId = this.id;}
         });
 </script>
 

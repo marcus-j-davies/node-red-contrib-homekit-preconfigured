@@ -96,11 +96,19 @@ Note: In order to intercept these commands, you will need to set the config valu
 A Special thanks to KhaosT (https://github.com/KhaosT) and the awsome contributors for the amazing hap-nodejs project, that makes projects like this one possible.
 
 ## Version History
+  - 1.2.1  
+    Fixed 'Full Deploy' crash  
+    Fixed 'ADDINUSE'  crash when copying and pasting a node.  
+      
+    Please  Note : If you're a user of these nodes presently, you will need to close and save the configuration, in order for them to initialize fully, this is to generate a type of checksum used to counteract the possibility of a duplicated node using the same port  (A warning is generated)
+    
+    Thanks to [Supergiovane](https://github.com/Supergiovane) for assistance.
+    
   - 1.2.0  
-    Added Garage Door Opener ([#2](https://github.com/marcus-j-davies/node-red-contrib-homekit-preconfigured/issues/2))
+    Added Garage Door Opener ([#2](https://github.com/marcus-j-davies/node-red-contrib-homekit-preconfigured/issues/2))  
   - 1.1.0  
-    Cleaned up config UI (Values for new accessories are generated on open)
-    Bump HAP-NodeJS to 0.5.6
-    Added Lock Accessory node.
+    Cleaned up config UI (Values for new accessories are generated on open)  
+    Bump HAP-NodeJS to 0.5.6  
+    Added Lock Accessory node.  
   - 1.0.0  
-    Initial Release
+    Initial Release  

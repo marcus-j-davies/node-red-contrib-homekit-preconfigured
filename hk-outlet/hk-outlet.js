@@ -4,6 +4,14 @@ module.exports = function (RED)
     {
         const node = this;
         RED.nodes.createNode(this, config);
+
+        if (config.originalId == undefined || this.id != config.originalId) {
+            node.status({ fill: "red", shape: "dot", text: "Please Review Configuration" });
+            node.error("Please review the Configuration, to ensure this node's values (username,pin & port) are unique across your homekit devices. If you simply open and save the configuration without making any necessary changes. you risk bigger problems.");
+            return;
+        }
+
+
         node.status({ fill: "red", shape: "dot", text: "Starting..." });
 
         const HapNodeJS = require("hap-nodejs");
@@ -131,9 +139,17 @@ module.exports = function (RED)
 
      
 
-        node.on('close', function ()
-        {
-            accessory.unpublish();
+        node.on('close', function (removed, done) {
+            if (removed) {
+                accessory.destroy();
+            }
+            else {
+                accessory.unpublish()
+            }
+
+            done();
+
+
         });
 
         node.on('input', function (msg)

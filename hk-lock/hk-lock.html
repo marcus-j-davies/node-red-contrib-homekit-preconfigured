@@ -44,7 +44,8 @@
                 username: { value: "" },
                 name: { value: "Door Lock" },
                 port: { value: "" },
-                interceptget: { value: "No" }
+                interceptget: { value: "No" },
+                originalId: { value: "" }
             },
             inputs: 1,
             outputs: 1,
@@ -53,7 +54,8 @@
                 return this.name;
             },
 
-            oneditprepare:SetValues
+            oneditprepare: SetValues,
+            oneditsave: function () { this.originalId = this.id; }
         });
 </script>
 

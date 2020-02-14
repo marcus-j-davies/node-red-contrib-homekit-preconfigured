@@ -41,7 +41,8 @@
                 username: { value: "" },
                 name: { value: "Motion Sensor" },
                 port: { value: "" },
-                interceptget: { value: "No" }
+                interceptget: { value: "No" },
+                originalId: { value: "" }
             },
             inputs: 1,
             outputs: 1,
@@ -49,7 +50,8 @@
             label: function () {
                 return this.name;
             },
-            oneditprepare: SetValues
+            oneditprepare: SetValues,
+            oneditsave: function () { this.originalId = this.id; }
         });
     
     </script>
