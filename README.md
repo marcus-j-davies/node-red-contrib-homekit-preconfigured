@@ -1,6 +1,9 @@
 # node-red-contrib-homekit-preconfigured
 A collection of node-red nodes, representing various preconfigured Homekit devices, supporting their full functionality.
 
+## ! -- NO LONGER MAINTAINED -- !
+Please see [HomeKit Device Stack](https://github.com/marcus-j-davies/Homekit-Device-Stack)
+
 Current configured nodes:
   - Switch
   - Outlet
